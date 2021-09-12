@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="麦兜小猪">
+    
+    <title>
+        
+            排序算法 |
+        
+        麦兜小猪笔记
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":false},"style":{"primary_color":"#00CCFF","avatar":"/images/猪.jpeg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"从来没有真正的绝境，只有心灵的迷途。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                麦兜小猪笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">排序算法</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/%E7%8C%AA.jpeg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">麦兜小猪</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-11 17:37:58
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.5k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><font color=#990099>排序（sort）</font>，就是重新排列表中的元素，使表中的元素满足按<font color=#990099>关键字</font>有序的过程。<br>稳定性，关键字相同的元素经过排序后行对顺序是否会改变。</p>
+<h1 id="插入排序（Insertion-Sort）"><a href="#插入排序（Insertion-Sort）" class="headerlink" title="插入排序（Insertion Sort）"></a>插入排序（Insertion Sort）</h1><h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>每次将一个带排序的记录按其关键字大小插入到前面已经排好序的子序列中，直到全部记录插入完成。<br><img src="/images/insertionsort.gif"></p>
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// 直接插入排序</span><br><span class="line">void Insertsort(int A[],int n)&#123;</span><br><span class="line">   int i,j,temp;</span><br><span class="line">   for(i=1;i&lt;n;i++)        //将各元素插入已排好的序列中</span><br><span class="line">       if(A[i]&lt;A[i-1])&#123;   //若A[i]关键字小于前驱</span><br><span class="line">           temp=A[i];      //用temp暂存A[i]</span><br><span class="line">		   for(j=i-1;j&gt;=0 &amp;&amp; A[j]&gt;temp;--j) //检查前面所有已排好的元素</span><br><span class="line">		        A[j+1]=a[j]; //所有大于temp的元素后移</span><br><span class="line">		    A[j+1]=temp;     //复制到插入位置</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">//直接插入排序（带哨兵）  </span><br><span class="line">void Insertsort(int A[],int n)</span><br><span class="line">   int i,j;</span><br><span class="line">   for(i=2;i&lt;=n;i++)       //依次将A[2]~A[n]插入到前面已排序序列</span><br><span class="line">        if(A[i]&lt;A[i-1]&#123;    //若A[i]小于其前驱，将A[i]插入有序列表</span><br><span class="line">		A[0]=A[i];         //复制为哨兵，A[0]不存放元素</span><br><span class="line">		for(j=i-1;A[0]&lt;A[j];--j) //从后往前查找待插入位置</span><br><span class="line">		   A[j+1]=A[j];    //向后挪位</span><br><span class="line">		A[j+1]=A[0];       //复制到插入位置</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>哨兵的优点在于：不用每轮循环都判断j&gt;=0</p>
+<h2 id="算法效率分析"><a href="#算法效率分析" class="headerlink" title="算法效率分析"></a>算法效率分析</h2><p>空间复杂度：O(1)<br>时间复杂度：主要来自对比关键字、移动元素，若有n个元素，则需要n-1趟处理<br>最好情况：共n-1趟处理，每趟只需对比关键字一次，不需要移动元素，最好时间复杂度为O(n)<br>最坏情况：第一趟：对比关键字2次，移动元素3次<br>          第二趟：对比关键字3次，移动元素4次<br>          …<br>          第n-1趟：对比关键字n次，移动元素n+1次<br>         最坏时间复杂度O(n^2)<br>平均时间复杂度：O(n^2)<br>稳定性：稳定</p>
+<h2 id="优化-折半查找排序"><a href="#优化-折半查找排序" class="headerlink" title="优化-折半查找排序"></a>优化-折半查找排序</h2><p>折半查找到应插入的位置，仅用于顺序表<br>注意：<font color=#990099>一直到low=high时才停止折半查找。当mid所指元素等于当前元素时，应继续令low=mid+1,以保证稳定性。最终应将当前元素插入到low所指位置（即high+1）。</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//折半插入排序</span><br><span class="line">void IsertSort(int A[],int n)&#123;</span><br><span class="line">      int i,j,low,high,mid;     </span><br><span class="line">	  for(i=2;i&lt;=n;i++)&#123;      //依次将A[2]~A[n]插入到前面已排序序列</span><br><span class="line">	      A[0]=A[i];          //将A[i]暂存到A[0]</span><br><span class="line">		  low=1,high=i-1;     //设置折半查找的范围</span><br><span class="line">		  while(low&lt;=high)&#123;   //折半查找</span><br><span class="line">		      mid=(low+high)/2; //取中间点</span><br><span class="line">			  if(A[mid]&gt;A[0])   </span><br><span class="line">			  high=mid-1;      //查找左半子表</span><br><span class="line">			  else low=mid+1;  //查找右半子表</span><br><span class="line">		&#125;</span><br><span class="line">		for(j=i-1;j&gt;=high+1;--j)</span><br><span class="line">		   A[j+1]=A[j];        //统一后移元素，空出插入位置</span><br><span class="line">		 A[high+1]=A[0];      </span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<p>虽然比较关键字次数减少了，但移动元素次数没变，时间复杂度O(n^2)</p>
+<h2 id="对链表的插入排序"><a href="#对链表的插入排序" class="headerlink" title="对链表的插入排序"></a>对链表的插入排序</h2><p>。。。<br>移动元素的次数减少了，但关键字对比的次数依然是O(n^2)数量级，整体来看时间复杂度依然是o(n^2)</p>
+<h1 id="希尔排序-Shell-Sort"><a href="#希尔排序-Shell-Sort" class="headerlink" title="希尔排序(Shell Sort)"></a>希尔排序(Shell Sort)</h1><h2 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h2><p> 先将带排序表分割成若干形如L[i,i+d,i+2d,…,i+kd]的“特殊”子表，对各个子表分别进行直接插入排序。缩小增量d，重复上述过程，直到d=1为止。<br> <img src="/images/shellsort.gif"></p>
+<h2 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h2> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//希尔排序</span><br><span class="line">void ShellSort(int A[],int n)&#123;</span><br><span class="line">     int d,i,j;</span><br><span class="line">  //A[0]只是暂存单元，不是哨兵，当j&lt;=0时，插入位置为j+d</span><br><span class="line">  for(d= n/2;d&gt;=1;d=d/2)&#123;       //步长变化</span><br><span class="line">       for(i=d+1;i&lt;=n;++i)</span><br><span class="line">	       if(A[i]&lt;A[i-d])&#123;     //需将A[i]插入有序增量子表</span><br><span class="line">		       A[0]=A[i];       //暂存于A[0]</span><br><span class="line">			   for(j=i-d;j&gt;0 &amp;&amp; A[0]&lt;A[j]；j-=d)</span><br><span class="line">			      A[j+d]=A[j]；   //记录后移，查找插入的位置</span><br><span class="line">				A[j+d]=A[0];      //插入</span><br><span class="line">		  &#125;   // if</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="算法性能排序"><a href="#算法性能排序" class="headerlink" title="算法性能排序"></a>算法性能排序</h2><p>空间复杂度：O(1)<br>时间复杂度：和增量序列d_1,d_2,d_3…有关，无法用数学手段证明确切的时间复杂度。<br>稳定性：不稳定！<br>适用性：仅适用于顺序表，不适用于链表</p>
+<h1 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h1><p>基于“交换”的排序：根据序列中<font color=#990099>两个元素关键字</font>的<font color=#990099>比较结果</font>来<font color=#990099>对换</font>这两个记录在序列中的位置。<br>包含冒泡排序和快速排序。</p>
+<h1 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h1><h2 id="算法思想-2"><a href="#算法思想-2" class="headerlink" title="算法思想"></a>算法思想</h2><p>从后往前（或从前往后）两两比较相邻元素的值，若为逆序（即A[i-1]&gt;A[i]）,则交换它们，直到序列比较完，称这样的过程为“一趟”冒泡排序。<br><img src="/images/bubblesort.gif"><br>每一趟都能使一个元素到达最终位置</p>
+<h2 id="算法实现-2"><a href="#算法实现-2" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//交换</span><br><span class="line">void swap(int &amp;a,int &amp;b)&#123;</span><br><span class="line">      int temp=a;</span><br><span class="line">	  a=b;</span><br><span class="line">	  b=temp;</span><br><span class="line">	&#125;</span><br><span class="line">//冒泡排序</span><br><span class="line">void BubbleSort(int A[],int n)&#123;</span><br><span class="line">     for(int i=0;i&lt;n-1;i++)&#123;</span><br><span class="line">	     bool flag=false;       //表示本趟排序是否发生交换的标志</span><br><span class="line">		 for(int j=n-1;j&gt;1;j--) //一趟排序过程</span><br><span class="line">		    if(A[j-1]&gt;A[j])&#123;     //若为逆序 </span><br><span class="line">			   swap(A[j-1],A[j]); //交换 </span><br><span class="line">			   flag=true;</span><br><span class="line">			 &#125;</span><br><span class="line">		if(flag=false)return; //本趟遍历未发生交换，说明已经有序</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="算法效率分析-1"><a href="#算法效率分析-1" class="headerlink" title="算法效率分析"></a>算法效率分析</h2><p>空间复杂度：O(1)<br>时间复杂度：最好情况（有序）O(n) ，比较次数=n-1；交换次数0<br>            最坏情况（逆序）O(n^2)，比较次数=(n-1)+(n-2)+…+1=n(n-1)/2=交换次数<br>            平均时间复杂度：O（n^2）<br><font color=#990099>每次用swap交换都要移动元素3次</font><br>稳定性：稳定</p>
+<h1 id="冒泡排序链表实现"><a href="#冒泡排序链表实现" class="headerlink" title="冒泡排序链表实现"></a>冒泡排序链表实现</h1><p>…</p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/09/11/%E8%B0%81%E4%B8%8D%E6%98%AF%E4%B8%80%E8%BE%B9%E5%8A%AA%E5%8A%9B%EF%BC%8C%E4%B8%80%E8%BE%B9%E6%83%B3%E6%94%BE%E5%BC%83/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">谁不是一边努力，一边想放弃</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">麦兜小猪</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88Insertion-Sort%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">插入排序（Insertion Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3"><span class="nav-number">2.1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90"><span class="nav-number">2.3.</span> <span class="nav-text">算法效率分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96-%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%E6%8E%92%E5%BA%8F"><span class="nav-number">2.4.</span> <span class="nav-text">优化-折半查找排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E9%93%BE%E8%A1%A8%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-number">2.5.</span> <span class="nav-text">对链表的插入排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F-Shell-Sort"><span class="nav-number">3.</span> <span class="nav-text">希尔排序(Shell Sort)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3-1"><span class="nav-number">3.1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">3.2.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%A7%E8%83%BD%E6%8E%92%E5%BA%8F"><span class="nav-number">3.3.</span> <span class="nav-text">算法性能排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">交换排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%88Bubble-Sort%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">冒泡排序（Bubble Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3-2"><span class="nav-number">5.1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">5.2.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90-1"><span class="nav-number">5.3.</span> <span class="nav-text">算法效率分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.</span> <span class="nav-text">冒泡排序链表实现</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
